@@ -1,0 +1,770 @@
+@charset "utf-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 62.5%;
+}
+
+header, nav, main, article, section, aside, footer {
+	display: block;
+}
+
+::selection {
+	background-color: #C62828;
+	color: white;
+}
+
+/**
+ * Header
+ */
+
+header.header {
+	transition: 300ms ease-in-out;
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+	height: 6em;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+header.header--sobre-conteudo {
+	transition: 300ms ease-in-out;
+	background-color: #383838;
+	box-shadow: 0px 6px 16px rgba(0,0,0, .2);
+}
+
+header.header--sobre-conteudo li.nav-lista__item a {
+	color: #AAA;
+}
+
+nav {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+nav #headerLogo {
+	display: block;
+	float: left;
+	width: 8%;
+	height: 4em;
+	padding: 1em 1%;
+}
+
+ul.nav-lista {
+	float: left;
+	width: 90%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+}
+
+li.nav-lista__item {
+	transition: 300ms ease-in-out;
+	position: relative;
+	display: inline-block;
+}
+
+li.nav-lista__item a {
+	transition: 300ms ease-in-out;
+	display: block;
+	font-size: 2em;
+	font-family: Roboto, Arial, sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: .9em 1em;
+	color: #444;
+}
+
+li.nav-lista__item::before {
+	transition: 300ms ease-in-out;
+	position: absolute;
+	width: 100%;
+	height: .6em;
+	background-color: #C62828;
+	content: ".";
+	color: transparent;
+	transform: translateY(-100%);
+	opacity: .75;
+}
+
+li.nav-lista__item:hover a {
+	transition: 300ms ease-in-out;
+	color: white !important;
+}
+
+li.nav-lista__item:hover::before {
+	transition: 300ms ease-in-out;
+	transform: translateY(0%);
+}
+
+li.nav-lista__item--selecionado a {
+	transition: 300ms ease-in-out;
+	color: white !important;
+	background-color: rgba(0,0,0, .05);
+	/*background: linear-gradient(rgba(0,0,0, .2), transparent);*/
+}
+
+li.nav-lista__item--selecionado::before {
+	transition: 300ms ease-in-out;
+	transform: translateY(0%);
+	opacity: 1;
+}
+
+/**
+ * Sessao principal
+ */
+
+section.portfolio-sessao {
+	background-color: #313131;
+	min-height: 70em;
+	overflow: hidden;
+}
+
+section.portfolio-sessao h2.portfolio-sessao__titulo {
+	font-family: Roboto, Arial, sans-serif;
+	font-size: 5em;
+	color: white;
+	font-weight: 700;
+	text-align: right;
+}
+
+section.portfolio-sessao h2.portfolio-sessao__titulo.portfolio-sessao__titulo--esquerda {
+	text-align: left;
+}
+
+section.portfolio-sessao p {
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-size: 2em;
+	font-weight: 300;
+	color: white;
+	text-align: justify;
+}
+
+section.portfolio-sessao div.portfolio-sessao__delimitador {
+	position: relative;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+section.portfolio-sessao#inicio {
+	position: relative;
+	height: 100vh;
+	/*padding: 6em 0 0 0;*/
+	background-image: url("../image/inicio-fundo.jpg");
+	/*background-attachment: fixed;*/
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+section.portfolio-sessao#inicio img#logo {
+	position: absolute;
+	display: block;
+	width: 70%;
+	height: 70vh;
+	padding: 15vh 15%;
+	transform: translateY(0%);
+}
+
+/**
+ * Voltar topo
+ */
+
+button#btnVoltarTopo {
+	transition: 200ms ease-in-out;
+	cursor: pointer;
+	position: fixed;
+	bottom: 1em;
+	left: 1em;
+	width: 4em;
+	height: 4em;
+	background-color: transparent;
+	background-image: url("../image/botao-seta-branca.svg");
+	background-position: center;
+	background-size: contain;
+	border: 0;
+	transform: rotate(60deg);
+	opacity: 0;
+	visibility: hidden;
+	outline: none;
+}
+
+button#btnVoltarTopo.visivel {
+	transition: 200ms ease-in-out;
+	transform: rotate(0deg);
+	opacity: 1;
+	visibility: visible;
+}
+
+/**
+ * Sessao sobre
+ */
+
+section.portfolio-sessao#sobre {
+	background-color: #383838;
+}
+
+section.portfolio-sessao#sobre div.separador-esquerda {
+	position: relative;
+	float: left;
+	width: 30%;
+	padding: 0 5%;
+	transition: 500ms ease-in-out;
+	transition-delay: 1s;
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+section.portfolio-sessao#sobre div.separador-esquerda--visivel {
+	transition: 500ms cubic-bezier(0.77, 0.19, 0, 1.02);
+	transition-delay: .5s;
+	transform: translateX(0%);
+	opacity: 1;
+}
+
+section.portfolio-sessao#sobre div.separador-direita {
+	position: relative;
+	float: right;
+	width: 50%;
+	min-height: 70em;
+	padding: 0 5%;
+	background-color: #313131;
+	background: linear-gradient(#313131, #313131, transparent);
+	transition: 1s ease-in-out;
+	transition-delay: 1s;
+	transform: translateY(-100%);
+}
+
+section.portfolio-sessao#sobre div.separador-direita--visivel {
+	transition: 1s cubic-bezier(0.77, 0.19, 0, 1.02);
+	transform: translateY(0%);
+}
+
+section.portfolio-sessao#sobre div.imagem-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+section.portfolio-sessao#sobre div.imagem-wrapper img {
+	display: block;
+	width: 100%;
+}
+
+section.portfolio-sessao#sobre div.imagem-wrapper img:nth-last-child(1) {
+	position: absolute;
+	display: block;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	border-radius: 100%;
+	transform: scale(.65);	
+	filter: sepia(1);
+}
+
+section.portfolio-sessao#sobre div.perfil-info {
+	border-radius: 5px;
+	width: 100%;
+}
+
+section.portfolio-sessao#sobre div.perfil-info div.perfil-info__links {
+	/*border-radius: 5px;*/
+	width: 90%;
+	/*background-color: white;*/
+	margin: 1em 0;
+	padding: 1em 5%;
+	text-align: center;
+}
+
+section.portfolio-sessao#sobre div.perfil-info div.perfil-info__links a {
+	transition: 150ms cubic-bezier(.24, .25, .3, 1.2);
+	display: inline-block;
+	margin: 0 1em;
+	color: white;
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-weight: 300;
+	font-size: 1.5em;
+	text-decoration: none;
+}
+
+section.portfolio-sessao#sobre div.perfil-info div.perfil-info__links a:hover {
+	transition: 150ms cubic-bezier(.24, .25, .3, 1.2);
+	color: #C62828;
+}
+
+section.portfolio-sessao#sobre h2.perfil-info__nome {
+	font-family: Roboto, Arial, sans-serif;
+	margin: .5em 0;
+	color: white;
+	font-size: 4em;
+	text-align: center;
+}
+
+section.portfolio-sessao#sobre p.perfil-info__descricao {
+	margin: 0;
+	color: #EFEFEF;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+/**
+ * Noscript
+ */
+
+div.js-aviso-barra {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+	background-color: #252525;
+	color: #C62828;
+}
+
+div.js-aviso-barra p {
+	font-size: 1.5em;
+	margin: .5em 0;
+	width: 90%;
+	padding: 0 5%;
+	font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+div.js-aviso-barra a {
+	color: white;
+}
+
+/**
+ * Sessao portfolio
+ */
+
+section.portfolio-sessao#portfolio {
+	height: 70em;
+	min-height: unset;
+	overflow: hidden;
+	background-color: #FFA000;
+}
+
+section.portfolio-sessao#portfolio h2.portfolio-sessao__titulo {
+	transition: 400ms ease-in-out;
+	transition-delay: 1s;
+	margin: 0;
+	padding: .39em 5%;
+	width: 90%;
+	transform: translateY(-100%);
+}
+
+section.portfolio-sessao#portfolio h2.portfolio-sessao__titulo.visivel {
+	transition: 400ms ease-in-out;
+	transform: none;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide {
+	transition: 500ms ease-in-out;
+	transition-delay: 1s;
+	position: relative;
+	width: 100%;
+	height: 60em;
+	bottom: -60em;
+	overflow: hidden;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide.visivel {
+	transition: 500ms cubic-bezier(0.23, 0.25, 0, 1.1);
+	transition-delay: .5s;
+	bottom: 0;
+}
+
+section.portfolio-sessao#portfolio ul.portfolio-slide__lista {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+section.portfolio-sessao#portfolio li.portfolio-slide__item {
+	transition: 350ms ease-in-out;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 60em;
+}
+
+section.portfolio-sessao#portfolio li.portfolio-slide__item div.projeto-imagem {
+	margin: 10em auto 0 auto;
+	height: 20em;
+	width: 50%;
+	border-radius: 5px;
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-attachment: scroll;
+	box-shadow: 2px 2px 16px rgba(0,0,0, .2);
+}
+
+section.portfolio-sessao#portfolio li.portfolio-slide__item span.projeto-titulo {
+	display: block;
+	margin: 0 auto;
+	font-size: 4em;
+	padding: 1.25em 0;
+	height: 5em;
+	width: 75%;
+	font-family: Raleway, Arial, sans-serif;
+	color: white;
+	text-align: center;
+}
+
+section.portfolio-sessao#portfolio button.portfolio-slide__controle {
+	transition: 200ms ease-in-out;
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	bottom: 0;
+	left: 0;
+	width: 10%;
+	height: 10em;
+	transform: translateY(-50%) rotate(-90deg);
+	background-color: transparent;
+	background-image: url("../image/botao-seta-branca.svg");
+	background-position: center;
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+section.portfolio-sessao#portfolio button.portfolio-slide__controle.visivel {
+	transition: 200ms ease-in-out;
+	visibility: visible;
+	opacity: 1;
+}
+
+section.portfolio-sessao#portfolio button.portfolio-slide__controle:hover {
+	transition: 200ms ease-in-out;
+	transform: translateY(-50%) translateX(-5%) rotate(-90deg);
+}
+
+section.portfolio-sessao#portfolio button.portfolio-slide__controle.portfolio-slide__controle--direita {
+	left: auto;
+	right: 0;
+	transform: translateY(-50%) rotate(90deg);
+}
+
+section.portfolio-sessao#portfolio button.portfolio-slide__controle.portfolio-slide__controle--direita:hover {
+	transition: 200ms ease-in-out;
+	transform: translateY(-50%) translateX(5%) rotate(90deg);
+}
+
+section.portfolio-sessao#portfolio button.portfolio-slide__verinfo {
+	transition: 200ms ease-in-out;
+	position: absolute;
+	bottom: 1em;
+	font-family: Raleway, Arial, sans-serif;
+	color: black;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	background-color: white;
+	padding: .5em;
+	font-size: 2em;
+	border-radius: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+section.portfolio-sessao#portfolio button.portfolio-slide__verinfo:hover {
+	transition: 200ms ease-in-out;
+	color: white;
+	background-color: #C62828;
+}
+
+@keyframes btnCliquePadrao {
+	0% {
+		transform: scale(1);
+	} 50% {
+		transform: scale(.75);
+	} 100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes controleClicaEsquerda {
+	0% {
+		transform: translateY(-50%) translateX(-5%) rotate(-90deg) scale(1);
+	} 50% {
+		transform: translateY(-50%) translateX(-5%) rotate(-90deg) scale(.75);
+	} 100% {
+		transform: translateY(-50%) translateX(-5%) rotate(-90deg) scale(1);
+	}
+}
+
+@keyframes controleClicaDireita {
+	0% {
+		transform: translateY(-50%) translateX(5%) rotate(90deg) scale(1);
+	} 50% {
+		transform: translateY(-50%) translateX(5%) rotate(90deg) scale(.75);
+	} 100% {
+		transform: translateY(-50%) translateX(5%) rotate(90deg) scale(1);
+	}
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao {
+	transition: 300ms ease-in;
+	position: absolute;
+	width: 100%;
+	height: 60em;
+	top: -60em;
+	background-color: white;
+	border-radius: 5px;
+	overflow-y: scroll;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao::-webkit-scrollbar {
+	background-color: white;
+	border-radius: 5px;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao::-webkit-scrollbar-thumb {
+	transition: 200ms ease-in-out;
+	background-color: rgba(0,0,0, .2);
+	border-radius: 5px;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao::-webkit-scrollbar-thumb:hover {
+	transition: 200ms ease-in-out;
+	background-color: rgba(0,0,0, .3);
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao.portfolio-slide__tela-descricao--visivel {
+	transition: 300ms ease-out;
+	top: 0em;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide div.tela-descricao__delimitador {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide #slideTitulo {
+	font-family: Roboto, Arial, sans-serif;
+	font-size: 5em;
+	color: #333;
+	font-weight: 700;
+	text-align: center;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide #slideDescricao {
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-size: 2em;
+	font-weight: 300;
+	color: #555;
+	text-align: justify;
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide #slideImagem {
+	width: 100%;
+	height: 40em;
+	border-radius: 5px;
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-attachment: scroll;
+	box-shadow: 2px 2px 16px rgba(0,0,0, .2);
+}
+
+section.portfolio-sessao#portfolio div.portfolio-slide #btnSlideFecharInfo {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 4em;
+	height: 4em;
+	background-color: transparent;
+	background-image: url("../image/botao-fechar-preto.svg");
+	background-position: center;
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+/**
+ * Sessao contato
+ */
+
+section.portfolio-sessao#contato {
+	background-color: #C62828;
+}
+
+section.portfolio-sessao#contato .portfolio-sessao__titulo {
+	transition: 500ms ease-in-out;
+	transform: translateX(100%) scale(0.5);
+	opacity: 0;
+}
+
+section.portfolio-sessao#contato .portfolio-sessao__titulo.visivel {
+	transition: 500ms cubic-bezier(0.23, 0.25, 0, 1.1);
+	transform: none;
+	opacity: 1;
+}
+
+section.portfolio-sessao#contato .portfolio-sessao__descricao {
+	width: 90%;
+	margin: 0 auto;
+	transition: 500ms ease-in-out;
+	transform: translateX(-100%) scale(0.5);
+	opacity: 0;
+}
+
+section.portfolio-sessao#contato .portfolio-sessao__descricao.visivel {
+	transition: 500ms cubic-bezier(0.23, 0.25, 0, 1.1);
+	transition-delay: .5s;
+	transform: none;
+	opacity: 1;
+}
+
+section.portfolio-sessao#contato form.portfolio-form {
+	position: relative;
+	width: 90%;
+	margin: 2em auto;
+	transition: 500ms ease-in-out;
+	transform: translateY(100%);
+	opacity: 0;
+}
+
+section.portfolio-sessao#contato form.portfolio-form.visivel {
+	transition: 500ms ease-in-out;
+	transition-delay: .75s;
+	transform: none;
+	opacity: 1;
+}
+
+section.portfolio-sessao#contato form.portfolio-form label {
+	display: block;
+	width: 100%;
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-weight: 500;
+	font-style: italic;
+	font-size: 2em;
+	color: white;
+}
+
+section.portfolio-sessao#contato form.portfolio-form input::-webkit-input-placeholder {
+	color: #CCC;
+}
+
+section.portfolio-sessao#contato form.portfolio-form input::-moz-placeholder {
+	color: #CCC;
+}
+
+section.portfolio-sessao#contato form.portfolio-form input::-ms-input-placeholder {
+	color: #CCC;
+}
+
+section.portfolio-sessao#contato form.portfolio-form input::-moz-placeholder {
+	color: #CCC;
+}
+
+section.portfolio-sessao#contato form.portfolio-form input[type=text], input[type=email] {
+	outline: none;
+	width: 100%;
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-weight: 300;
+	font-size: 2em;
+	color: white;
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-bottom: .2em solid rgba(0,0,0, .1);
+}
+
+section.portfolio-sessao#contato form.portfolio-form textarea {
+	outline: none;
+	width: 100%;
+	min-height: 10em;
+	max-height: 50vh;
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-weight: 300;
+	font-size: 2em;
+	color: white;
+	background-color: rgba(0,0,0, .1);
+	margin: 0;
+	padding: 0;
+	border: 0;
+	resize: none;
+	border-radius: 5px;
+}
+
+section.portfolio-sessao#contato form.portfolio-form button {
+	display: block;
+	margin: 1em auto;
+	min-width: 15%;
+	transition: 200ms ease-in-out;
+	font-family: Raleway, Arial, sans-serif;
+	color: black;
+	text-align: center;
+	padding: 0;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	background-color: white;
+	padding: .5em;
+	font-size: 2em;
+	border-radius: 5px;
+}
+
+section.portfolio-sessao#contato form.portfolio-form button:hover {
+	transition: 200ms ease-in-out;
+	color: white;
+	background-color: #FFA000;
+}
+
+/**
+ * Footer
+ */
+
+footer {
+	background-color: #383838;
+	min-height: 20em;
+}
+
+footer .footer__direitos {
+	font-family: Raleway, Arial, sans-serif;
+	font-size: 1.3em;
+	font-weight: 300;
+	color: #AAA;
+	text-align: center;
+	margin: 0;
+	padding: 1em 0;
+}
+
+footer .footer__descricao {
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #888;
+	text-align: center;
+	margin: 0;
+	padding: 1em 0;
+}
+
+footer a {
+	color: #C62828;
+}
