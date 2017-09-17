@@ -168,7 +168,7 @@ Portfolio.prototype.scrollPara = function(pos) {
 
 	portfolio.podeUsarScroll = false;
 
-	$('body').animate({
+	$('html, body').animate({
 		scrollTop: pos
 	}, 500, undefined, function() {
 		portfolio.podeUsarScroll = true;

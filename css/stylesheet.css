@@ -25,9 +25,8 @@ header.header {
 	z-index: 1;
 	position: fixed;
 	width: 100%;
-	height: 6em;
+	/*height: 6em;*/
 	background-color: transparent;
-	overflow: hidden;
 }
 
 header.header--sobre-conteudo {
@@ -613,6 +612,8 @@ section.portfolio-sessao#contato {
 }
 
 section.portfolio-sessao#contato .portfolio-sessao__titulo {
+	width: 90%;
+	margin: .5em auto;
 	transition: 500ms ease-in-out;
 	transform: translateX(100%) scale(0.5);
 	opacity: 0;
@@ -767,4 +768,87 @@ footer .footer__descricao {
 
 footer a {
 	color: #C62828;
+}
+
+/**
+ * Mobile
+ */
+
+@media screen and (max-width: 720px) {
+	li.nav-lista__item a {
+		font-size: 1.2em;
+		padding: 1.5em 1em;
+	}
+
+	nav #headerLogo {
+		display: none;
+	}
+
+	button#btnVoltarTopo {
+		width: 3em;
+		height: 3em;
+	}
+
+	section.portfolio-sessao#sobre div.separador-esquerda {
+		float: none;
+		width: 90%;
+	}
+
+	section.portfolio-sessao#sobre div.separador-direita {
+		float: none;
+		width: 90%;
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	section.portfolio-sessao#sobre div.separador-direita--visivel {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	section.portfolio-sessao#portfolio {
+		height: auto;
+	}
+
+	section.portfolio-sessao#portfolio div.portfolio-slide {
+		height: 100vh;
+	}
+
+	section.portfolio-sessao#portfolio div.portfolio-slide button.portfolio-slide__controle {
+		width: 20%;
+	}
+
+	section.portfolio-sessao#portfolio div.portfolio-slide li.portfolio-slide__item {
+		height: 100vh;
+	}
+
+	section.portfolio-sessao#portfolio div.portfolio-slide div.projeto-imagem {
+		height: 25vh;
+		margin: 25vh auto 0 auto;
+	}
+
+	section.portfolio-sessao#portfolio div.portfolio-slide span.projeto-titulo {
+		height: 25vh;
+		margin: 0 auto 5vh auto;
+		padding: 10vh 0;
+	}
+
+	section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao {
+		height: 100vh;
+		top: -100vh;
+	}
+
+	section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao #slideImagem {
+		height: 25vh;
+	}
+
+	section.portfolio-sessao .portfolio-sessao__titulo {
+		text-align: center !important;
+	}
+
+	footer p {
+		width: 90%;
+		margin: 0 auto !important;
+	}
 }
