@@ -169,6 +169,14 @@ section.portfolio-sessao#inicio img#logo {
 	transform: translateY(0%);
 }
 
+section.portfolio-sessao#inicio svg#logo {
+	position: absolute;
+	display: block;
+	width: 70%;
+	height: 70vh;
+	padding: 15vh 15%;
+}
+
 /**
  * Voltar topo
  */
@@ -195,7 +203,6 @@ button#btnVoltarTopo {
 button#btnVoltarTopo.visivel {
 	transition: 200ms ease-in-out;
 	transform: rotate(0deg);
-	box-shadow: 0px 6px 16px rgba(0,0,0, .2);
 	opacity: 1;
 	visibility: visible;
 }
