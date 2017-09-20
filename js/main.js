@@ -86,8 +86,8 @@ Portfolio.prototype.atualizarParallax = function() {
 		return;
 
 	$('.portfolio-sessao#inicio').css('background-position', '0px ' + this.tela.scrollTopo / 2 + 'px');
-	$('.portfolio-sessao#inicio img#logo').css('transform', 'translateY(' + this.tela.scrollTopo / 3 + 'px)'); 
-	// $('.portfolio-sessao#inicio img#logo').css('opacity', 1.0 - this.tela.scrollTopo / this.tela.altura);
+	$('.portfolio-sessao#inicio img#logo, svg#logo').css('transform', 'translateY(' + this.tela.scrollTopo / 3 + 'px)'); 
+	// $('.portfolio-sessao#inicio img#logo, svg#logo').css('opacity', 1.0 - this.tela.scrollTopo / this.tela.altura);
 };
 
 Portfolio.prototype.aoEntrarNaSessao = function(sessao) {
@@ -157,7 +157,7 @@ Portfolio.prototype.registrarEventos = function() {
 		anchor.onclick = function(e) {
 			e.preventDefault();
 
-			portfolio.scrollPara($(this.hash).offset().top - 60);
+			portfolio.scrollPara($(this.hash).offset().top - $('header.header').height());
 		};
 	}
 };
