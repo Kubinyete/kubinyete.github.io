@@ -526,6 +526,16 @@ section.portfolio-sessao#portfolio button.portfolio-slide__verinfo:hover {
 	}
 }
 
+@keyframes controleClicaInfo {
+	0% {
+		transform: translateX(-50%) scale(1);
+	} 50% {
+		transform: translateX(-50%) scale(.75);
+	} 100% {
+		transform: translateX(-50%) scale(1);
+	}
+}
+
 section.portfolio-sessao#portfolio div.portfolio-slide div.portfolio-slide__tela-descricao {
 	transition: 300ms ease-in;
 	position: absolute;
@@ -622,13 +632,13 @@ section.portfolio-sessao#contato {
 section.portfolio-sessao#contato .portfolio-sessao__titulo {
 	width: 90%;
 	margin: .5em auto;
-	transition: 500ms ease-in-out;
+	transition: 500ms ease-out;
 	transform: translateX(100%) scale(0.5);
 	opacity: 0;
 }
 
 section.portfolio-sessao#contato .portfolio-sessao__titulo.visivel {
-	transition: 500ms cubic-bezier(0.23, 0.25, 0, 1.1);
+	transition: 500ms ease-out;
 	transform: none;
 	opacity: 1;
 }
@@ -637,12 +647,12 @@ section.portfolio-sessao#contato .portfolio-sessao__descricao {
 	width: 90%;
 	margin: 0 auto;
 	transition: 500ms ease-in-out;
-	transform: translateX(-100%) scale(0.5);
+	transform: translateY(-10%);
 	opacity: 0;
 }
 
 section.portfolio-sessao#contato .portfolio-sessao__descricao.visivel {
-	transition: 500ms cubic-bezier(0.23, 0.25, 0, 1.1);
+	transition: 500ms ease-in-out;
 	transition-delay: .5s;
 	transform: none;
 	opacity: 1;
@@ -653,13 +663,13 @@ section.portfolio-sessao#contato form.portfolio-form {
 	width: 90%;
 	margin: 2em auto;
 	transition: 500ms ease-in-out;
-	transform: translateY(100%);
+	transform: translateY(-10%);
 	opacity: 0;
 }
 
 section.portfolio-sessao#contato form.portfolio-form.visivel {
 	transition: 500ms ease-in-out;
-	transition-delay: .75s;
+	transition-delay: 1s;
 	transform: none;
 	opacity: 1;
 }

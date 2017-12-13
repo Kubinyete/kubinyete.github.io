@@ -248,6 +248,11 @@ Portfolio.prototype.verInfoSlide = function() {
 		portfolio.portfolioSlideDescricaoUltimoId = portfolio.portfolioSlideAtualId;
 	}
 
+	$('#btnSlideVerInfo').css('animation', 'controleClicaInfo 200ms ease-out');
+	setTimeout(function() {
+		$('#btnSlideVerInfo').css('animation', 'none');
+	}, 200);
+
 	$('#portfolio .portfolio-slide .portfolio-slide__tela-descricao').addClass('portfolio-slide__tela-descricao--visivel');
 };
 
