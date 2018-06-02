@@ -270,7 +270,6 @@ section.portfolio-sessao#sobre div.imagem-wrapper img:nth-last-child(1) {
 	right: 0;
 	border-radius: 100%;
 	transform: scale(.65);	
-	filter: sepia(1);
 }
 
 section.portfolio-sessao#sobre div.perfil-info {
